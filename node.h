@@ -10,7 +10,10 @@ class node
 {
 public:
 	node();
+	node(int key, pair<int, int>pos, bool type,string name);
 	~node();
+	int key;
+	string name;
 	pair<int, int> pos;
 	pair<int, int>size;//w,h
 	bool type;//is_terminal
