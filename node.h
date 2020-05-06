@@ -11,18 +11,8 @@ class node
 public:
 	node();
 	~node();
-
-private:
 	pair<int, int> pos;
 	pair<int, int>size;//w,h
 	bool type;//is_terminal
 	bool move_type;//is_FIXED
 };
-
-node::node()
-{
-}
-
-node::~node()
-{
-}
