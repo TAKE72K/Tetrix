@@ -9,6 +9,7 @@ class row
 {
 public:
 	row() {};
+	row(int c, int h, int s, int n) :cordinate(c), height(h), subOrigin(s), numsite(n) {};
 	~row();
 	int cordinate;
 	int height;

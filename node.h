@@ -6,6 +6,7 @@
 #include<string>
 #include <utility> 
 using namespace std;
+
 class node
 {
 public:
@@ -18,4 +19,9 @@ public:
 	pair<int, int>size;//w,h
 	bool type;//is_terminal
 	bool move_type;//is_FIXED
+	
+	
+	
+	void print();
 };
+bool greaterX(node *a, node* b) ;
