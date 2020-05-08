@@ -105,3 +105,7 @@ void parser::readRow() {
 		}
 	}
 }
+
+void parser::legal()
+{
+}

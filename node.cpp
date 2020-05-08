@@ -9,6 +9,13 @@ node::node(int k, pair<int, int>p, bool t, string n) {
 	name = n;
 }
 
+int node::nearX()
+{
+	int j = (this->pos.first - 10) % 12;
+	if (j >= 6) { return pos.first + 12 - j };
+	else { return pos.first - j; }
+}
+
 void node::print()
 {
 	cout << name<<":\n";

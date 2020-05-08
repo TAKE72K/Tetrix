@@ -21,6 +21,7 @@ public:
 	vector<node*>n ;
 	void readNode();
 	void readRow();
+	void legal();
 private:
 	string filename;
 };
