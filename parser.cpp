@@ -5,6 +5,7 @@
 #include <string>
 #include <utility>
 #include<iostream>
+#include<algorithm>//sort
 using namespace std;
 parser::parser(string filename)
 {
@@ -108,4 +109,13 @@ void parser::readRow() {
 
 void parser::legal()
 {
+	for(int i=0;i<n.size();i++)
+	{
+		r[n[i]->nearY()]->pl.push_back(n[i]);
+	}
+	map<int, row*>::iterator iter;
+	for (iter = r.begin(); iter != r.end(); iter++)
+	{
+		sort(iter->second->pl.begin(), iter->second->pl.end(), greaterX);
+	}
 }

@@ -9,11 +9,11 @@ node::node(int k, pair<int, int>p, bool t, string n) {
 	name = n;
 }
 
-int node::nearX()
+int node::nearY()
 {
-	int j = (this->pos.first - 10) % 12;
-	if (j >= 6) { return pos.first + 12 - j };
-	else { return pos.first - j; }
+	int j = (this->pos.second - 10) % 12;
+	if (j >= 6) { return pos.second + 12 - j; }
+	else { return pos.second - j; }
 }
 
 void node::print()
