@@ -28,3 +28,7 @@ bool greaterX(node *a,node *b)
 {
 	return(a->pos.first < b->pos.first);
 }
+string node::out() {
+	string output;
+	return output;
+}

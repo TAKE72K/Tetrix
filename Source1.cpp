@@ -13,7 +13,7 @@ int main() {
 	a->n[210904]->print();
 	a->n[211386]->print();
 	cout<<a->r.size();
-
+	a->writePL();
 	system("pause");
 
-}
+ }

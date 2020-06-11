@@ -5,6 +5,7 @@
 #include <string>
 #include <utility>
 #include<iostream>
+#include<iomanip>
 #include<algorithm>//sort
 using namespace std;
 parser::parser(string filename)
@@ -116,6 +117,40 @@ void parser::legal()
 	map<int, row*>::iterator iter;
 	for (iter = r.begin(); iter != r.end(); iter++)
 	{
-		sort(iter->second->pl.begin(), iter->second->pl.end(), greaterX);
+		sort(iter->second->pl.begin(), iter->second->pl.end(), greaterX);//sort with x pos
+		for (int j = 0; j < iter->second->pl.size(); j++) 
+		{
+			pair<int, int> npos = iter->second->pl[j]->pos;
+			pair<int, int> nsize = iter->second->pl[j]->size;
+			if (iter->second->pl[j]->move_type==false&&iter->second->pl[j]->type==false) {
+				if (npos.first >= iter->second->empty_x)//empty ok to place 
+				{
+					iter->second->pl[j]->pos =make_pair(iter->second->empty_x, iter->first);
+					iter->second->empty_x += nsize.first;
+				}
+				else {
+					map<int, row*>::iterator k =std::next(iter,1);
+					k->second->pl.push_back(iter->second->pl[j]);
+				}
+			}
+			
+		}
+
 	}
+
+}
+void parser::writePL() 
+{
+	string oname = this->filename + "_output";
+	ofstream ofs;
+	ofs.open(oname + ".pl", ios::out);
+	for (int i = 0; i < this->n.size(); i++) {
+		node* tmp = n[i];
+		ofs << tmp->name<<setw(10)<<tmp->pos.first<<setw(6)<<tmp->pos.second<<" : N ";
+		if (tmp->move_type) { ofs << "/ FIXED"; }ofs << '\n';
+
+
+	}
+	ofs.close();
+	
 }

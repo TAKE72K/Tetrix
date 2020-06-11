@@ -22,6 +22,7 @@ public:
 	void readNode();
 	void readRow();
 	void legal();
+	void writePL();
 private:
 	string filename;
 };

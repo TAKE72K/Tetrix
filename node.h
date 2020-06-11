@@ -21,7 +21,7 @@ public:
 	bool move_type;//is_FIXED
 	int nearY();
 	
-	
+	string out();
 	void print();
 };
 bool greaterX(node *a, node* b) ;

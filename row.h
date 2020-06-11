@@ -16,5 +16,6 @@ public:
 	int subOrigin;
 	int numsite;
 	std::vector<node*> pl;
+	int empty_x = 0;
 };
 
