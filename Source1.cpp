@@ -4,8 +4,9 @@
 
 #define  endl '\n'
 using namespace std;
-int main() {
+int main(int argc, char *argv[]) {
 	std::string fn = "adaptec1";
+	if (argc > 1) { fn = argv[1]; }
 	parser* a;a=new parser(fn);
 	a->legal();
 	a->n[0]->print();
